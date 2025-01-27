@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lost and Found</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Lost and Found Service" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo1.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/logo1.jpg" alt="" height="50px" style="margin-right: 10px">Lost<span
+                    style="color: #fb873f;">Found</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Lost and Found</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Lost & Found</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Lost & Found Form Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Report Lost Item</h2>
+            <form id="lostFoundForm" onsubmit="saveItem(event)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="itemType">Item Type</label>
+                            <select class="form-control" id="itemType" required>
+                                <option value="" disabled selected>Select Item Type</option>
+                                <option value="lost">Lost</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select class="form-control" id="category" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="cash">Cash</option>
+                                <option value="cloth">cloth</option>
+                                <option value="bag">bag</option>
+
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" class="form-control" id="itemName" placeholder="Enter item name" required>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="color">Color</label>
+                            <input type="text" class="form-control" id="color" placeholder="Enter item color" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="place">Place</label>
+                            <input type="text" class="form-control" id="place" placeholder="Enter place where found/lost" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" class="form-control" id="time" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="itemDescription">Description</label>
+                    <textarea class="form-control" id="itemDescription" rows="4" placeholder="Enter item description" required></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="contactInfo">Your Contact Info</label>
+                    <input type="text" class="form-control" id="contactInfo" placeholder="Enter your contact info" required>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="reward">Reward (optional)</label>
+                    <input type="number" class="form-control" id="reward" placeholder="Enter reward amount (in INR)">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="image">Upload Item Image (optional)</label>
+                    <input type="file" class="form-control" id="image" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Lost & Found Form End -->
+
+    <!-- Display Lost & Found Items -->
+    <!-- <div class="container-xxl py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Lost and Found Items</h2>
+            <div id="itemList" class="row g-4">
+                <!-- Items will be displayed here -->
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Bangalore, Karnataka</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>secretcoder@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Secret Coder</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Local Storage JavaScript -->
+    <script>
+        // Load items from localStorage when the page loads
+        window.onload = function() {
+            displayItems();
+        };
+
+        // Function to save a lost or found item to localStorage
+        function saveItem(event) {
+            event.preventDefault();
+
+            const itemType = document.getElementById('itemType').value;
+            const category = document.getElementById('category').value;
+            const itemName = document.getElementById('itemName').value;
+            const color = document.getElementById('color').value;
+            const place = document.getElementById('place').value;
+            const time = document.getElementById('time').value;
+            const date = document.getElementById('date').value;
+            const description = document.getElementById('itemDescription').value;
+            const contactInfo = document.getElementById('contactInfo').value;
+            const reward = document.getElementById('reward').value;
+            const image = document.getElementById('image').files[0];
+
+            const item = {
+                type: itemType,
+                category: category,
+                name: itemName,
+                color: color,
+                place: place,
+                time: time,
+                date: date,
+                description: description,
+                contact: contactInfo,
+                reward: reward,
+                image: image ? URL.createObjectURL(image) : ''
+            };
+
+            let items = JSON.parse(localStorage.getItem('lostFoundItems')) || [];
+            items.push(item);
+            localStorage.setItem('lostFoundItems', JSON.stringify(items));
+
+            // Reset the form and display updated items
+            document.getElementById('lostFoundForm').reset();
+            displayItems();
+        }
+
+        // Function to display all saved items
+        function displayItems() {
+            const itemList = document.getElementById('itemList');
+            itemList.innerHTML = '';
+
+            const items = JSON.parse(localStorage.getItem('lostFoundItems')) || [];
+            items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('col-md-6');
+                itemElement.classList.add('mb-4');
+                itemElement.innerHTML = `
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.type === 'lost' ? 'Lost Item: ' : 'Found Item: '} ${item.name}</h5>
+                            ${item.image ? `<img src="${item.image}" class="card-img-top" alt="${item.name}">` : ''}
+                            <p><strong>Category:</strong> ${item.category}</p>
+                            <p><strong>Color:</strong> ${item.color}</p>
+                            <p><strong>Place:</strong> ${item.place}</p>
+                            <p><strong>Time:</strong> ${item.time}</p>
+                            <p><strong>Date:</strong> ${item.date}</p>
+                            <p><strong>Description:</strong> ${item.description}</p>
+                            <p><strong>Contact:</strong> ${item.contact}</p>
+                            ${item.reward ? `<p><strong>Reward:</strong> ₹${item.reward}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+                itemList.appendChild(itemElement);
+            });
+        }
+    </script>
+</body>
+
+</html>

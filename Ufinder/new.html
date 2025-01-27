@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Your Wallet</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/logo1.jpg" alt="" height="50px" style="margin-right: 10px">U<span
+                    style="color: #fb873f;">Finder</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Connect Your Wallet</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Connect</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Connect Wallet Start -->
+    <div class="container text-center py-5">
+        <h2 class="mb-4">Choose Your Wallet</h2>
+        <p>Select one of the options below to connect your wallet.</p>
+
+        <!-- MetaMask Option -->
+        <div class="mb-3">
+            <button id="metamask-btn" class="btn btn-primary btn-lg" onclick="connectMetaMask()">Connect with MetaMask</button>
+        </div>
+
+        <!-- Other Wallet Option -->
+        <div class="mb-3">
+            <button id="wallet-btn" class="btn btn-secondary btn-lg" onclick="connectWallet()">Connect with Wallet</button>
+        </div>
+
+    </div>
+    <!-- Connect Wallet End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Bangalore, Karnataka</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>Ufinder@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Web3 & MetaMask connection JavaScript -->
+    <script>
+        async function connectMetaMask() {
+            if (window.ethereum) {
+                try {
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    alert("MetaMask Connected");
+                } catch (error) {
+                    alert("Connection Error");
+                }
+            } else {
+                alert("MetaMask is not installed!");
+            }
+        }
+
+        function connectWallet() {
+            // This function will handle connecting to other wallets.
+            // You can integrate wallets like WalletConnect, Coinbase, etc.
+            alert("Connect with Wallet functionality coming soon.");
+        }
+    </script>
+</body>
+
+</html> -->
